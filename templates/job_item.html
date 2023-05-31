@@ -1,0 +1,10 @@
+<div class="mb-4">
+        <div class="mt-1" > 
+         <h4 style="color:rgb(120,120,120)"> 
+         {{ job['title']}} </h4> </div>
+        <div> <b> Location: </b> {{ job['location']}} </div>
+        
+        {% if job['salary']  %}
+          <div> <b> Salary: </b> {{ job['salary']}} </div>
+        {% endif %}
+</div>

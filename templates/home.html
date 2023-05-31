@@ -26,14 +26,9 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
     <h2 class="text-center"> Open Positions </h2>
-    <div > 
+    <div  class=" mt-4 mb-4"> 
       {% for job in jobs %} 
-        <div class="mt-2" > <h4 style="color:rgb(120,120,120)"> {{ job['title']}} </h4> </div>
-        <div> <b> Location: </b> {{ job['location']}} </div>
-        
-        {% if job['salary'] %}
-          <div class="mb-4"> <b> Salary: </b> {{ job['salary']}} </div>
-        {% endif % }
+        {% include "job_item.html" %}
       {% endfor %}
        
     </div>
