@@ -22,8 +22,16 @@ def load_jobs_from_db():
     return result_dicts
 
 
+def load_jobs_from_db (id):
+  with engine.connect as conn:
+    result = conn.execute (text("select * from jobs where id=:val"), val=id)
+    result_dicts = result.all
+    if len(result_dicts) == 0 :
+      return None
+    else:
+      return result_dicts[0]._mapping
+      
 
-    
 
 
  

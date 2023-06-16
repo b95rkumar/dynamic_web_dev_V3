@@ -11,6 +11,15 @@ def hello_world ():
   JOBS= load_jobs_from_db ()
   return render_template ( "home.html", jobs=JOBS, company_name="Jovian")
 
+@app.route ("/jobs/<id>")
+def show_job (id):
+  job=load_jobs_from_db(id)
+  if not job:
+    return "Not Found", 404
+    
+  return render_template ("jobpage.html", job=job, company_name="Jovian")
+
+
 @app.route ("/jobsapi")
 def jobs_api ():
   JOBS= load_jobs_from_db ()
