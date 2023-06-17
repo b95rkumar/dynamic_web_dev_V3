@@ -13,11 +13,13 @@ def hello_world ():
 
 @app.route ("/jobs/<id>")
 def show_job (id):
+  print("id", id)
   job=load_job_from_db(id)
   if not job:
     return "Not Found", 404
   else:  
-    return render_template ("jobpage.html", job=job, company_name="Jovian")
+#    return jsonify(job)
+     return render_template ("jobpage.html", job=job, company_name="Jovian")
 
 
 @app.route ("/jobsapi")
